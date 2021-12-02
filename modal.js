@@ -17,10 +17,10 @@ const successPg = document.querySelector(".bground--success");
 const closeSuccessBtn = document.querySelectorAll(".btn-close");
 //Form Data
 let firstName = document.getElementById("first");
-let lastName = document.getElementById("last").value;
-let email = document.getElementById("email").value;
-let birthDate = document.getElementById("birthdate").value;
-let eventQuantity = document.getElementById("quantity").value;
+let lastName = document.getElementById("last");
+let email = document.getElementById("email");
+let birthDate = document.getElementById("birthdate");
+let eventQuantity = document.getElementById("quantity");
 //let cityEvent = document.getElementById("nom").value;
 
 // launch modal event
@@ -35,11 +35,23 @@ function launchModal() {
 firstName.addEventListener('change', function() {
   firstName = firstName.value
 });
-
-//input.addEventListener('change', updateValue);
-//input.addEventListener('change', updateValue);
-//input.addEventListener('change', updateValue);
-//input.addEventListener('change', updateValue);
+lastName.addEventListener('change', function() {
+  lastName = lastName.value
+});
+email.addEventListener('change', function() {
+  email = email.value
+});
+birthDate.addEventListener('change', function() {
+  birthDate = birthDate.value
+});
+eventQuantity.addEventListener('change', function() {
+  eventQuantity = eventQuantity.value
+});
+console.log(firstName)
+console.log(lastName)
+console.log(email)
+console.log(birthDate)
+console.log(eventQuantity)
 
 // close form event
 closeForm.forEach((cross) =>cross.addEventListener("click", closeFormular));
