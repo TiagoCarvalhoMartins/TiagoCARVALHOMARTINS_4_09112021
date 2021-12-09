@@ -79,7 +79,7 @@
               onsubmit="return validate();"
             >
               <div
-                class="formData">
+                class="formData firstName" data-error="Veuillez entrer 2 caractères ou plus pour le champ du Prénom." data-error-visible="false">
                 <label>Prénom</label><br>
                 <input
                   class="text-control"
@@ -90,7 +90,7 @@
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData lastName" data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom." data-error-visible="false">
                 <label>Nom</label><br>
                 <input
                   class="text-control"
@@ -100,7 +100,7 @@
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData eMail" data-error="Veuillez entrer un adresse email valide." data-error-visible="false">
                 <label>E-mail</label><br>
                 <input
                   class="text-control"
@@ -110,7 +110,7 @@
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData birthDate" data-error="Vous devez entrer votre date de naissance." data-error-visible="false">
                 <label>Date de naissance</label><br>
                 <input
                   class="text-control"
@@ -120,7 +120,7 @@
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData eventQuantity" data-error="Vous devez entrer un chiffre." data-error-visible="false">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
               </div>
@@ -129,7 +129,7 @@
                 class="formData">
                 <input
                   class="checkbox-input"
-                  type="radio"
+                  type="checkbox"
                   id="location1"
                   name="location"
                   value="New York"
@@ -140,7 +140,7 @@
                 >
                 <input
                   class="checkbox-input"
-                  type="radio"
+                  type="checkbox"
                   id="location2"
                   name="location"
                   value="San Francisco"
@@ -151,7 +151,7 @@
                 >
                 <input
                   class="checkbox-input"
-                  type="radio"
+                  type="checkbox"
                   id="location3"
                   name="location"
                   value="Seattle"
@@ -162,7 +162,7 @@
                 >
                 <input
                   class="checkbox-input"
-                  type="radio"
+                  type="checkbox"
                   id="location4"
                   name="location"
                   value="Chicago"
@@ -173,7 +173,7 @@
                 >
                 <input
                   class="checkbox-input"
-                  type="radio"
+                  type="checkbox"
                   id="location5"
                   name="location"
                   value="Boston"
@@ -184,7 +184,7 @@
                 >
                 <input
                   class="checkbox-input"
-                  type="radio"
+                  type="checkbox"
                   id="location6"
                   name="location"
                   value="Portland"

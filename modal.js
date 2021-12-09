@@ -21,6 +21,9 @@ let lastName = document.getElementById("last");
 let email = document.getElementById("email");
 let birthDate = document.getElementById("birthdate");
 let eventQuantity = document.getElementById("quantity");
+let firstNameValue ="";
+let lastNameValue ="";
+let emailValue ="";
 //let cityEvent = document.getElementById("nom").value;
 
 // launch modal event
@@ -31,27 +34,40 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-//recuperation data from the form
+//recuperation data from the form and validation
 firstName.addEventListener('change', function() {
-  firstName = firstName.value
+  let fistNameValue = document.getElementById('first').value;
+  if (firstNameValue.length < 2) {
+    document.getElementById('firstName').setAttribute('data-error-visible', 'true');
+  }
 });
+
 lastName.addEventListener('change', function() {
-  lastName = lastName.value
+  let lastNameValue = document.getElementById('last').value;
+  if (lastNameValue.length < 2) {
+    document.getElementById('lastName').setAttribute('data-error-visible', 'true');
+  }
 });
+
 email.addEventListener('change', function() {
-  email = email.value
-});
+  let emailValue = document.getElementById('email').value;
+  function ValidateEmail(input) {
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (emailValue.value.match(validRegex)) {
+      document.getElementById('eMail').setAttribute('data-error-visible', 'true');
+  }
+};
+
 birthDate.addEventListener('change', function() {
   birthDate = birthDate.value
 });
+
 eventQuantity.addEventListener('change', function() {
-  eventQuantity = eventQuantity.value
+  let eventQuantityValue = document.getElementById('quantity').value;
+  if (eventQuantityValuee.length < 1) {
+    document.getElementById('eventQuantity').setAttribute('data-error-visible', 'true');
+  }
 });
-console.log(firstName)
-console.log(lastName)
-console.log(email)
-console.log(birthDate)
-console.log(eventQuantity)
 
 // close form event
 closeForm.forEach((cross) =>cross.addEventListener("click", closeFormular));
@@ -79,3 +95,4 @@ closeSuccessBtn.forEach((close) =>close.addEventListener("click", closeSuccess))
 function closeSuccess() {
   successPg.style.display = "none";
 }
+});
