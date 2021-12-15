@@ -24,7 +24,7 @@ let eventQuantity = document.getElementById("quantity");
 let firstNameValue ="";
 let lastNameValue ="";
 let emailValue ="";
-//let cityEvent = document.getElementById("nom").value;
+let cityEvent = "";
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -38,14 +38,14 @@ function launchModal() {
 firstName.addEventListener('change', function() {
   let fistNameValue = document.getElementById('first').value;
   if (firstNameValue.length < 2) {
-    document.getElementById('firstName').setAttribute('data-error-visible', 'true');
+    document.getElementsByClassName('firstName')[0].setAttribute('data-error-visible', 'true');
   }
 });
 
 lastName.addEventListener('change', function() {
   let lastNameValue = document.getElementById('last').value;
   if (lastNameValue.length < 2) {
-    document.getElementById('lastName').setAttribute('data-error-visible', 'true');
+    document.getElementsByClassName('lastName')[0].setAttribute('data-error-visible', 'true');
   }
 });
 
@@ -54,7 +54,7 @@ email.addEventListener('change', function() {
   function ValidateEmail(input) {
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (emailValue.value.match(validRegex)) {
-      document.getElementById('eMail').setAttribute('data-error-visible', 'true');
+      document.getElementsByClassName('eMail')[0].setAttribute('data-error-visible', 'true');
   }
 };
 
@@ -63,11 +63,19 @@ birthDate.addEventListener('change', function() {
 });
 
 eventQuantity.addEventListener('change', function() {
-  let eventQuantityValue = document.getElementById('quantity').value;
-  if (eventQuantityValuee.length < 1) {
-    document.getElementById('eventQuantity').setAttribute('data-error-visible', 'true');
+  let cityEvent = document.getElementById("quantity");
+  if (cityEvent !== null && cityEvent.value === "") {
+    document.getElementsByClassName('eventQuantity')[0].setAttribute('data-error-visible', 'true');
   }
 });
+
+function validate() {
+  if (document.getElementsByClassName('userCondition').checked) {
+      
+  } else {
+    document.getElementsByClassName('userCondition')[0].setAttribute('data-error-visible', 'true');
+  }
+}
 
 // close form event
 closeForm.forEach((cross) =>cross.addEventListener("click", closeFormular));

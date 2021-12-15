@@ -289,6 +289,96 @@ input {
 .firstName[data-error-visible="true"] .text-control {
 	border: 2px solid #e54858;
 }
+.lastName[data-error]::after {
+	content: attr(data-error);
+	font-size: 0.4em;
+	color: #e54858;
+	display: block;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	text-align: right;
+	line-height: 0.3;
+	opacity: 0;
+	transition: 0.3s;
+}
+.lastName[data-error-visible="true"]::after {
+	opacity: 1;
+}
+.lastName[data-error-visible="true"] .text-control {
+	border: 2px solid #e54858;
+}
+.eMail[data-error]::after {
+	content: attr(data-error);
+	font-size: 0.4em;
+	color: #e54858;
+	display: block;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	text-align: right;
+	line-height: 0.3;
+	opacity: 0;
+	transition: 0.3s;
+}
+.eMail[data-error-visible="true"]::after {
+	opacity: 1;
+}
+.eMail[data-error-visible="true"] .text-control {
+	border: 2px solid #e54858;
+}
+.birthDate[data-error]::after {
+	content: attr(data-error);
+	font-size: 0.4em;
+	color: #e54858;
+	display: block;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	text-align: right;
+	line-height: 0.3;
+	opacity: 0;
+	transition: 0.3s;
+}
+.birthDate[data-error-visible="true"]::after {
+	opacity: 1;
+}
+.birthDate[data-error-visible="true"] .text-control {
+	border: 2px solid #e54858;
+}
+.eventQuantity[data-error]::after {
+	content: attr(data-error);
+	font-size: 0.4em;
+	color: #e54858;
+	display: block;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	text-align: right;
+	line-height: 0.3;
+	opacity: 0;
+	transition: 0.3s;
+}
+.eventQuantity[data-error-visible="true"]::after {
+	opacity: 1;
+}
+.eventQuantity[data-error-visible="true"] .text-control {
+	border: 2px solid #e54858;
+}
+.userCondition[data-error]::after {
+	content: attr(data-error);
+	font-size: 0.4em;
+	color: #e54858;
+	display: block;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	text-align: right;
+	line-height: 0.3;
+	opacity: 0;
+	transition: 0.3s;
+}
+.userCondition[data-error-visible="true"]::after {
+	opacity: 1;
+}
+.userCondition[data-error-visible="true"] .text-control {
+	border: 2px solid #e54858;
+}
 /* 
 input[data-error]::after {
     content: attr(data-error);
