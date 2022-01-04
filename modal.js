@@ -21,6 +21,7 @@ let lastName = document.getElementById("last");
 let email = document.getElementById("email");
 let birthDate = document.getElementById("birthdate");
 let eventQuantity = document.getElementById("quantity");
+let wichEvent = document.getElementsByClassName("wichEvent");
 let userCondition = document.getElementById("checkbox1");
 let firstNameValue ="";
 let lastNameValue ="";
@@ -32,6 +33,7 @@ let lastNameValidate = false;
 let eMailValidate = false;
 let birthDateValidate = false;
 let eventQuantityValidate = true;
+let wichEventChecked = false;
 let userConditionChecked = false;
 
 // launch modal event
@@ -105,6 +107,17 @@ eventQuantity.addEventListener('change', function() {
   }
 });
 
+for (var i = 0; i < wichEvent.length; i++) {
+  wichEvent[i].addEventListener('change', function() {
+    if (document.getElementById("location1").checked || document.getElementById("location2").checked 
+    || document.getElementById("location3").checked || document.getElementById("location4").checked 
+    || document.getElementById("location5").checked || document.getElementById("location6").checked) {
+        document.getElementsByClassName('wichEventError')[0].setAttribute('data-error-visible', 'false');
+        wichEventChecked = true;
+    }
+  })
+}
+
 userCondition.addEventListener('change', function() {
   if (this.checked) {
     document.getElementsByClassName('userCondition')[0].setAttribute('data-error-visible', 'false');
@@ -126,12 +139,20 @@ function closeFormular() {
 }
 
 //submit form event if valide
-submitBtn.forEach((submit)=>submit.addEventListener("click", function(event) {
-  event.preventDefault();
-  if (firstNameValidate === true && lastNameValidate === true && eMailValidate === true && birthDateValidate === true && eventQuantityValidate === true && userConditionChecked === true) {
-    modalbg.style.display = "none";
-    successPg.style.display = "block";
-  };
+submitBtn.forEach((submit)=>
+  submit.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    if (firstNameValidate === true && lastNameValidate === true && eMailValidate === true && birthDateValidate === true && 
+      eventQuantityValidate === true && wichEventChecked === true && userConditionChecked === true) {
+        modalbg.style.display = "none";
+        successPg.style.display = "block";
+        document.getElementById("newform").reset();
+    };
+    
+  }
+))
 
 // close success event
 closeSuccessBtn.forEach((close) =>close.addEventListener("click", closeSuccess));
@@ -139,4 +160,4 @@ closeSuccessBtn.forEach((close) =>close.addEventListener("click", closeSuccess))
 //close success
 function closeSuccess() {
   successPg.style.display = "none";
-}}))
+}
