@@ -125,10 +125,7 @@
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" value="0">
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-              <div
-                class="formData wichEventError"
-                data-error="Vous devez séléctionner une option." 
-                data-error-visible="false">
+              <div class="formData">
                 <input
                   class="checkbox-input wichEvent"
                   type="radio"
@@ -218,12 +215,15 @@
                 </label>
                 <br>
               </div>
-              <input
-                class="btn-submit"
-                type="submit"
-                class="button"
-                value="C'est parti"
-              />
+              <div class="formData submitError" data-error="Vous devez renseigner tous les champs." 
+              data-error-visible="false">
+                <input
+                  class="btn-submit"
+                  type="submit"
+                  class="button"
+                  value="C'est parti"
+                />
+              </div>
             </form>
           </div>
         </div>

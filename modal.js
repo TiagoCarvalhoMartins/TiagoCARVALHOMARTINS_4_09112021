@@ -112,7 +112,6 @@ for (var i = 0; i < wichEvent.length; i++) {
     if (document.getElementById("location1").checked || document.getElementById("location2").checked 
     || document.getElementById("location3").checked || document.getElementById("location4").checked 
     || document.getElementById("location5").checked || document.getElementById("location6").checked) {
-        document.getElementsByClassName('wichEventError')[0].setAttribute('data-error-visible', 'false');
         wichEventChecked = true;
     }
   })
@@ -149,8 +148,9 @@ submitBtn.forEach((submit)=>
         modalbg.style.display = "none";
         successPg.style.display = "block";
         document.getElementById("newform").reset();
-    };
-    
+    } else {
+      document.getElementsByClassName('submitError')[0].setAttribute('data-error-visible', 'true');
+    }
   }
 ))
 
