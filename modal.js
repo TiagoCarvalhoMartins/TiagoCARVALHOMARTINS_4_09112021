@@ -148,6 +148,13 @@ submitBtn.forEach((submit)=>
         modalbg.style.display = "none";
         successPg.style.display = "block";
         document.getElementById("newform").reset();
+        firstNameValidate = false;
+        lastNameValidate = false;
+        eMailValidate = false;
+        birthDateValidate = false;
+        eventQuantityValidate = true;
+        wichEventChecked = false;
+        userConditionChecked = false;
     } else {
       document.getElementsByClassName('submitError')[0].setAttribute('data-error-visible', 'true');
     }
